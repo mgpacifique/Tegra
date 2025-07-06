@@ -1,0 +1,43 @@
+:root {
+    --primary-color: #251e1d;
+    --secondary-color: #b9845f;
+    --accent-color: #ddb8a2;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: var(--primary-color) !important;
+}
+
+.hero {
+    background-color: var(--accent-color);
+    padding: 4rem 0;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+}
+
+.stat-number {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
