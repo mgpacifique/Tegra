@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "gsap": "^3.13.0",
     "particle.js": "^1.0.7",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "three": "^0.178.0",
+    "three.js": "^0.77.1"
   }
 }
