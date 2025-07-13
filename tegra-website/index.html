@@ -12,17 +12,18 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #251e1d;">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/images/logo.png" alt="Impact Squad Logo" height="40">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/impact-squad-logo.png" alt="Impact Squad Logo" class="header-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="journey.html">Journey</a></li>
+                    <li class="nav-item"><a class="nav-link" href="solution.html">Our Solution</a></li>
                     <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
                 </ul>
             </div>
@@ -31,15 +32,214 @@
 
     <header class="hero py-5" style="background: linear-gradient(rgba(37, 30, 29, 0.85), rgba(185, 132, 95, 0.85)), url('assets/images/group-photo.jpg'); background-size: cover; background-position: center; min-height: 70vh;">
         <div class="container text-center">
-            <h1 class="hero-title" style="text-shadow: 4px 4px 8px rgba(0,0,0,0.8); font-size: 4.5rem; font-weight: 900; letter-spacing: 2px; color: #fff!important; text-transform: uppercase;">EMPOWERING RWANDA'S TECH FUTURE</h1>
-            <p class="hero-subtext" style="font-size: 1.7rem; line-height: 1.9; max-width: 800px; margin: 2rem auto; font-weight: 600; color: #fff!important;">
+            <h1 class="hero-title">EMPOWERING RWANDA'S TECH FUTURE</h1>
+            <p class="hero-subtext">
                 <span class="stat-highlight">62%</span> of Rwandan tech students need career guidance<br>
                 Only <span class="stat-highlight">12.8%</span> computer literacy nationwide
             </p>
         </div>
     </header>
 
-    <!-- Removed 3D elements per user request -->
+    <main class="container my-5 fade-in-section">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8 text-center">
+                <div class="btn-group mb-3" role="group" aria-label="Toggle Statements">
+                    <button id="showProblem" class="btn btn-secondary active statement-toggle" onclick="toggleStatement('problem')">Problem Statement</button>
+                    <button id="showMission" class="btn btn-secondary statement-toggle" onclick="toggleStatement('mission')">Mission Statement</button>
+                </div>
+                <div id="problemStatement" class="toggle-statement fade-toggle show">
+                    <div class="alert alert-info"><strong>Problem Statement:</strong> In Rwanda today, many highschool students want to be data scientist, software engineers or web developers, but many times they don't understand where to start, who to talk to for guidance as these fields are wide and big. A 2022 survey by the Rwanda Education Board showed that 62% of students interested in tech couldn’t name a clear career goal, and only 18% had someone in the tech field to guide them. Even though there are amazing learning opportunities online through platforms like Coursera, Udemy or programs like ALX, fewer than 25% of students knew how to find or use them. Without the right guidance and support, many young people risk wasting time, losing motivation, or giving up on a field they could truly thrive in.</div>
+                </div>
+                <div id="missionStatement" class="toggle-statement fade-toggle">
+                    <div class="alert alert-success"><strong>Mission Statement:</strong> Our mission is to empower students in highschool who are interested in tech, by helping them choose the right path, build their skills and connect with mentors.</div>
+                </div>
+            </div>
+        </div>
+        <div id="statsSection" class="fade-in-section fade-toggle show">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h3 class="mt-5 text-center">Key Statistics</h3>
+                    <div class="row mt-4">
+                        <div class="col-md-4 text-center fade-in-section">
+                            <canvas id="computerLiteracyChart" width="90" height="90" aria-label="Youth Computer Literacy"></canvas>
+                            <div class="stat-label">Youth Computer Literacy<br><span class="stat-highlight">18.8%</span> are computer literate</div>
+                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        </div>
+                        <div class="col-md-4 text-center fade-in-section">
+                            <canvas id="internetUseChart" width="90" height="90" aria-label="Youth Internet Use"></canvas>
+                            <div class="stat-label">Youth Internet Use (last 3 months)<br><span class="stat-highlight">43.4%</span> used the internet</div>
+                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        </div>
+                        <div class="col-md-4 text-center fade-in-section">
+                            <canvas id="mobileOwnershipChart" width="90" height="90" aria-label="Mobile Phone Ownership"></canvas>
+                            <div class="stat-label">Mobile Phone Ownership (16+)<br><span class="stat-highlight">72.5%</span> own a mobile phone</div>
+                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-6 text-center fade-in-section">
+                            <canvas id="populationLiteracyChart" width="90" height="90" aria-label="Computer Literacy (15+)"></canvas>
+                            <div class="stat-label">Computer Literacy (15+)<br><span class="stat-highlight">12.8%</span> are computer literate</div>
+                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        </div>
+                        <div class="col-md-6 text-center fade-in-section">
+                            <canvas id="populationInternetChart" width="90" height="90" aria-label="Internet Use (6+)"></canvas>
+                            <div class="stat-label">Internet Use (6+)<br><span class="stat-highlight">27.4%</span> used the internet</div>
+                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 text-end stat-source">Additional data: Rwanda Education Board 2022</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <style>
+    .toggle-statement, .fade-toggle {
+        opacity: 0;
+        transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+        pointer-events: none;
+        height: 0;
+        overflow: hidden;
+    }
+    .toggle-statement.show, .fade-toggle.show {
+        opacity: 1;
+        pointer-events: auto;
+        height: auto;
+        overflow: visible;
+    }
+    .statement-toggle {
+        background-color: var(--secondary-color) !important;
+        color: #fff !important;
+        border: none !important;
+        transition: background 0.4s, color 0.4s;
+    }
+    .statement-toggle.active, .statement-toggle:focus {
+        background-color: var(--primary-color) !important;
+        color: #fff !important;
+    }
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+    .fade-in-section.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+    .stat-label {
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+        color: var(--primary-color);
+    }
+    .stat-source {
+        font-size: 0.9rem;
+        color: var(--secondary-color);
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Use website palette
+        const palette = {
+            primary: getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim() || '#251e1d',
+            secondary: getComputedStyle(document.documentElement).getPropertyValue('--secondary-color').trim() || '#b9845f',
+            accent: getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim() || '#ddb8a2',
+        };
+        // Youth Computer Literacy
+        new Chart(document.getElementById('computerLiteracyChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Literate', 'Not Literate'],
+                datasets: [{
+                    data: [18.8, 81.2],
+                    backgroundColor: [palette.secondary, '#eaeaea'],
+                }]
+            },
+            options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
+        });
+        // Youth Internet Use
+        new Chart(document.getElementById('internetUseChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Used Internet', 'Not Used'],
+                datasets: [{
+                    data: [43.4, 56.6],
+                    backgroundColor: [palette.primary, '#eaeaea'],
+                }]
+            },
+            options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
+        });
+        // Mobile Phone Ownership (16+)
+        new Chart(document.getElementById('mobileOwnershipChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Own Phone', 'No Phone'],
+                datasets: [{
+                    data: [72.5, 27.5],
+                    backgroundColor: [palette.accent, '#eaeaea'],
+                }]
+            },
+            options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
+        });
+        // Computer Literacy (15+)
+        new Chart(document.getElementById('populationLiteracyChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Literate', 'Not Literate'],
+                datasets: [{
+                    data: [12.8, 87.2],
+                    backgroundColor: [palette.secondary, '#eaeaea'],
+                }]
+            },
+            options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
+        });
+        // Internet Use (6+)
+        new Chart(document.getElementById('populationInternetChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Used Internet', 'Not Used'],
+                datasets: [{
+                    data: [27.4, 72.6],
+                    backgroundColor: [palette.primary, '#eaeaea'],
+                }]
+            },
+            options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
+        });
+        // Fade-in on scroll
+        function handleFadeIn() {
+            const faders = document.querySelectorAll('.fade-in-section');
+            faders.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) {
+                    el.classList.add('is-visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', handleFadeIn);
+        window.addEventListener('DOMContentLoaded', handleFadeIn);
+        // Toggle statements with smooth fade
+        function toggleStatement(type) {
+            const problem = document.getElementById('problemStatement');
+            const mission = document.getElementById('missionStatement');
+            const btnProblem = document.getElementById('showProblem');
+            const btnMission = document.getElementById('showMission');
+            const stats = document.getElementById('statsSection');
+            if (type === 'problem') {
+                problem.classList.add('show');
+                mission.classList.remove('show');
+                btnProblem.classList.add('active');
+                btnMission.classList.remove('active');
+                stats.classList.add('show');
+            } else {
+                problem.classList.remove('show');
+                mission.classList.add('show');
+                btnProblem.classList.remove('active');
+                btnMission.classList.add('active');
+                stats.classList.remove('show');
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
