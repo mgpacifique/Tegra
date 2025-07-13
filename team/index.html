@@ -315,6 +315,58 @@
         background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
     }
     
+    /* Desktop and Tablet Styles */
+    @media (min-width: 769px) {
+        .member-avatar img {
+            width: 140px;
+            height: 140px;
+        }
+        
+        .card-body {
+            padding: 2rem !important;
+        }
+        
+        .info-item {
+            font-size: 1rem;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+        }
+        
+        .member-badges .badge {
+            font-size: 0.8rem;
+            padding: 0.6em 0.9em;
+        }
+        
+        .avatar-overlay {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+    }
+    
+    /* Tablet Styles */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .member-avatar img {
+            width: 130px;
+            height: 130px;
+        }
+        
+        .card-body {
+            padding: 1.75rem !important;
+        }
+        
+        .info-item {
+            font-size: 0.95rem;
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+        }
+    }
+    
+    /* Mobile Styles */
     @media (max-width: 768px) {
         .member-avatar img {
             width: 100px;
@@ -327,6 +379,46 @@
         
         .info-item {
             font-size: 0.85rem;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+        }
+        
+        .member-badges .badge {
+            font-size: 0.7rem;
+            padding: 0.4em 0.7em;
+        }
+        
+        .avatar-overlay {
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+        }
+    }
+    
+    /* Extra Small Mobile */
+    @media (max-width: 576px) {
+        .member-avatar img {
+            width: 90px;
+            height: 90px;
+        }
+        
+        .card-body {
+            padding: 1.25rem !important;
+        }
+        
+        .info-item {
+            font-size: 0.8rem;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+        }
+        
+        .member-badges .badge {
+            font-size: 0.65rem;
+            padding: 0.35em 0.6em;
         }
     }
     </style>
