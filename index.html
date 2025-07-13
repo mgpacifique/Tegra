@@ -196,10 +196,44 @@
             font-size: 0.8rem;
         }
         
-        .stat-source {
-            font-size: 0.7rem;
-        }
+            .stat-source {
+        font-size: 0.7rem;
     }
+}
+
+/* Hero section mobile optimization */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 70vh !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-subtext {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        min-height: 70vh !important;
+        padding: 3rem 0 !important;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .hero-subtext {
+        font-size: 0.9rem !important;
+    }
+}
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
