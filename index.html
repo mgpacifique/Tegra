@@ -59,33 +59,41 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h3 class="mt-5 text-center">Key Statistics</h3>
-                    <div class="row mt-4">
-                        <div class="col-md-4 text-center fade-in-section">
-                            <canvas id="computerLiteracyChart" width="90" height="90" aria-label="Youth Computer Literacy"></canvas>
-                            <div class="stat-label">Youth Computer Literacy<br><span class="stat-highlight">18.8%</span> are computer literate</div>
-                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                    <div class="row mt-4 g-3">
+                        <div class="col-6 col-lg-4 text-center fade-in-section">
+                            <div class="stat-card">
+                                <canvas id="computerLiteracyChart" width="90" height="90" aria-label="Youth Computer Literacy"></canvas>
+                                <div class="stat-label">Youth Computer Literacy<br><span class="stat-highlight">18.8%</span> are computer literate</div>
+                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                            </div>
                         </div>
-                        <div class="col-md-4 text-center fade-in-section">
-                            <canvas id="internetUseChart" width="90" height="90" aria-label="Youth Internet Use"></canvas>
-                            <div class="stat-label">Youth Internet Use (last 3 months)<br><span class="stat-highlight">43.4%</span> used the internet</div>
-                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        <div class="col-6 col-lg-4 text-center fade-in-section">
+                            <div class="stat-card">
+                                <canvas id="internetUseChart" width="90" height="90" aria-label="Youth Internet Use"></canvas>
+                                <div class="stat-label">Youth Internet Use<br><span class="stat-highlight">43.4%</span> used the internet</div>
+                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                            </div>
                         </div>
-                        <div class="col-md-4 text-center fade-in-section">
-                            <canvas id="mobileOwnershipChart" width="90" height="90" aria-label="Mobile Phone Ownership"></canvas>
-                            <div class="stat-label">Mobile Phone Ownership (16+)<br><span class="stat-highlight">72.5%</span> own a mobile phone</div>
-                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        <div class="col-6 col-lg-4 text-center fade-in-section">
+                            <div class="stat-card">
+                                <canvas id="mobileOwnershipChart" width="90" height="90" aria-label="Mobile Phone Ownership"></canvas>
+                                <div class="stat-label">Mobile Phone Ownership<br><span class="stat-highlight">72.5%</span> own a mobile phone</div>
+                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-md-6 text-center fade-in-section">
-                            <canvas id="populationLiteracyChart" width="90" height="90" aria-label="Computer Literacy (15+)"></canvas>
-                            <div class="stat-label">Computer Literacy (15+)<br><span class="stat-highlight">12.8%</span> are computer literate</div>
-                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        <div class="col-6 col-lg-4 text-center fade-in-section">
+                            <div class="stat-card">
+                                <canvas id="populationLiteracyChart" width="90" height="90" aria-label="Computer Literacy (15+)"></canvas>
+                                <div class="stat-label">Computer Literacy (15+)<br><span class="stat-highlight">12.8%</span> are computer literate</div>
+                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                            </div>
                         </div>
-                        <div class="col-md-6 text-center fade-in-section">
-                            <canvas id="populationInternetChart" width="90" height="90" aria-label="Internet Use (6+)"></canvas>
-                            <div class="stat-label">Internet Use (6+)<br><span class="stat-highlight">27.4%</span> used the internet</div>
-                            <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        <div class="col-6 col-lg-4 text-center fade-in-section">
+                            <div class="stat-card">
+                                <canvas id="populationInternetChart" width="90" height="90" aria-label="Internet Use (6+)"></canvas>
+                                <div class="stat-label">Internet Use (6+)<br><span class="stat-highlight">27.4%</span> used the internet</div>
+                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                            </div>
                         </div>
                     </div>
                     <div class="row mt-4">
@@ -136,6 +144,61 @@
     .stat-source {
         font-size: 0.9rem;
         color: var(--secondary-color);
+    }
+    
+    .stat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.5rem 1rem;
+        box-shadow: 0 2px 8px rgba(37,30,29,0.08);
+        border: 1px solid rgba(185, 132, 95, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(37,30,29,0.15);
+    }
+    
+    .stat-card canvas {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    @media (max-width: 768px) {
+        .stat-card {
+            padding: 1rem 0.75rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+        
+        .stat-source {
+            font-size: 0.75rem;
+        }
+        
+        .stat-card canvas {
+            width: 70px !important;
+            height: 70px !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .stat-card canvas {
+            width: 60px !important;
+            height: 60px !important;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+        }
+        
+        .stat-source {
+            font-size: 0.7rem;
+        }
     }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

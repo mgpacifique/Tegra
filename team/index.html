@@ -6,6 +6,7 @@
     <title>Our Team - Impact Squad</title>
     <link rel="stylesheet" href="../tegra-website/assets/css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #251e1d;">
@@ -29,77 +30,309 @@
     </nav>
 
     <main class="container my-5">
-        <div class="row mb-5">
-            <div class="col-lg-6 mb-4">
-                <div class="mermaid fade-in-section">
-                graph TD;
-                    A["<img src='../tegra-website/assets/images/020250707_135520_8.4.300.PORTRAIT.jpg' style='width:60px;border-radius:50%'><br>Manzi Gatabazi"] --> B["<b>Education:</b> BSc Software Engineering"];
-                    A --> C["<b>Interests:</b> Mentoring, Community Building"];
-                    A --> D["<b>Skills:</b> Web Dev, Leadership"];
-                    A --> E["<b>Role:</b> Impact Squad Leader"];
-                </div>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="mermaid fade-in-section">
-                graph TD;
-                    D["<img src='../tegra-website/assets/images/manzi-profile.webp' style='width:60px;border-radius:50%'><br>Ntwali Beni David"] --> D1["<b>Education:</b> BSc Computer Science"];
-                    D --> D2["<b>Interests:</b> Curriculum, Workshops"];
-                    D --> D3["<b>Skills:</b> Teaching, Facilitation"];
-                    D --> D4["<b>Role:</b> Core Member"];
-                </div>
-            </div>
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-primary mb-3">Meet Our Team</h1>
+            <p class="lead text-secondary">Passionate changemakers dedicated to empowering Rwanda's tech future</p>
         </div>
-        <div class="row mb-5">
-            <div class="col-lg-6 mb-4">
-                <div class="mermaid fade-in-section">
-                graph TD;
-                    E["<img src='../tegra-website/assets/images/member-placeholder.webp' style='width:60px;height:60px;border-radius:50%'><br>Miracle Chidoze"] --> E1["<b>Education:</b> BA International Relations"];
-                    E --> E2["<b>Interests:</b> Coordination, Storytelling"];
-                    E --> E3["<b>Skills:</b> Communication, Networking"];
-                    E --> E4["<b>Role:</b> Core Member"];
+
+        <div class="row g-4">
+            <!-- Manzi Gatabazi -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="team-card fade-in-section">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="member-avatar mb-3">
+                                <img src="../tegra-website/assets/images/020250707_135520_8.4.300.PORTRAIT.jpg" 
+                                     alt="Manzi Gatabazi" class="rounded-circle">
+                                <div class="avatar-overlay">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                            </div>
+                            <h4 class="card-title fw-bold text-primary mb-2">Manzi Gatabazi</h4>
+                            <p class="text-secondary mb-3"><i class="fas fa-star text-warning"></i> Impact Squad Leader</p>
+                            
+                            <div class="member-info">
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-graduation-cap text-primary"></i>
+                                    <span class="ms-2">BSc Software Engineering</span>
+                                </div>
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-heart text-danger"></i>
+                                    <span class="ms-2">Mentoring, Community Building</span>
+                                </div>
+                                <div class="info-item mb-3">
+                                    <i class="fas fa-tools text-success"></i>
+                                    <span class="ms-2">Web Dev, Leadership</span>
+                                </div>
+                            </div>
+                            
+                            <div class="member-badges">
+                                <span class="badge bg-primary me-1">Leader</span>
+                                <span class="badge bg-secondary me-1">Mentor</span>
+                                <span class="badge bg-success">Developer</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6 mb-4">
-                <div class="mermaid fade-in-section">
-                graph TD;
-                    F["<img src='../tegra-website/assets/images/miracle-profile.webp' style='width:60px;height:60px;border-radius:50%'><br>Sophie Neza Shenge"] --> F1["<b>Education:</b> BSc Community Development"];
-                    F --> F2["<b>Interests:</b> Community, Engagement"];
-                    F --> F3["<b>Skills:</b> Event Planning, Outreach"];
-                    F --> F4["<b>Role:</b> Core Member"];
+
+            <!-- Ntwali Beni David -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="team-card fade-in-section">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="member-avatar mb-3">
+                                <img src="../tegra-website/assets/images/manzi-profile.webp" 
+                                     alt="Ntwali Beni David" class="rounded-circle">
+                                <div class="avatar-overlay">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                            </div>
+                            <h4 class="card-title fw-bold text-primary mb-2">Ntwali Beni David</h4>
+                            <p class="text-secondary mb-3"><i class="fas fa-users text-info"></i> Core Member</p>
+                            
+                            <div class="member-info">
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-graduation-cap text-primary"></i>
+                                    <span class="ms-2">BSc Computer Science</span>
+                                </div>
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-heart text-danger"></i>
+                                    <span class="ms-2">Curriculum, Workshops</span>
+                                </div>
+                                <div class="info-item mb-3">
+                                    <i class="fas fa-tools text-success"></i>
+                                    <span class="ms-2">Teaching, Facilitation</span>
+                                </div>
+                            </div>
+                            
+                            <div class="member-badges">
+                                <span class="badge bg-info me-1">Educator</span>
+                                <span class="badge bg-warning me-1">Facilitator</span>
+                                <span class="badge bg-secondary">Core</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mb-5 justify-content-center">
-            <div class="col-lg-6 mb-4">
-                <div class="mermaid fade-in-section">
-                graph TD;
-                    G["<img src='../tegra-website/assets/images/miracle-profile.webp' style='width:60px;height:60px;border-radius:50%'><br>Nyirihirwe Yves"] --> G1["<b>Education:</b> BSc Information Technology"];
-                    G --> G2["<b>Interests:</b> Tech, QA"];
-                    G --> G3["<b>Skills:</b> Technical Lead, Quality Assurance"];
-                    G --> G4["<b>Role:</b> Core Member"];
+
+            <!-- Miracle Chidoze -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="team-card fade-in-section">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="member-avatar mb-3">
+                                <img src="../tegra-website/assets/images/member-placeholder.webp" 
+                                     alt="Miracle Chidoze" class="rounded-circle">
+                                <div class="avatar-overlay">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                            </div>
+                            <h4 class="card-title fw-bold text-primary mb-2">Miracle Chidoze</h4>
+                            <p class="text-secondary mb-3"><i class="fas fa-users text-info"></i> Core Member</p>
+                            
+                            <div class="member-info">
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-graduation-cap text-primary"></i>
+                                    <span class="ms-2">BA International Relations</span>
+                                </div>
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-heart text-danger"></i>
+                                    <span class="ms-2">Coordination, Storytelling</span>
+                                </div>
+                                <div class="info-item mb-3">
+                                    <i class="fas fa-tools text-success"></i>
+                                    <span class="ms-2">Communication, Networking</span>
+                                </div>
+                            </div>
+                            
+                            <div class="member-badges">
+                                <span class="badge bg-info me-1">Communicator</span>
+                                <span class="badge bg-warning me-1">Coordinator</span>
+                                <span class="badge bg-secondary">Core</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sophie Neza Shenge -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="team-card fade-in-section">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="member-avatar mb-3">
+                                <img src="../tegra-website/assets/images/miracle-profile.webp" 
+                                     alt="Sophie Neza Shenge" class="rounded-circle">
+                                <div class="avatar-overlay">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                            </div>
+                            <h4 class="card-title fw-bold text-primary mb-2">Sophie Neza Shenge</h4>
+                            <p class="text-secondary mb-3"><i class="fas fa-users text-info"></i> Core Member</p>
+                            
+                            <div class="member-info">
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-graduation-cap text-primary"></i>
+                                    <span class="ms-2">BSc Community Development</span>
+                                </div>
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-heart text-danger"></i>
+                                    <span class="ms-2">Community, Engagement</span>
+                                </div>
+                                <div class="info-item mb-3">
+                                    <i class="fas fa-tools text-success"></i>
+                                    <span class="ms-2">Event Planning, Outreach</span>
+                                </div>
+                            </div>
+                            
+                            <div class="member-badges">
+                                <span class="badge bg-success me-1">Community</span>
+                                <span class="badge bg-info me-1">Events</span>
+                                <span class="badge bg-secondary">Core</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nyirihirwe Yves -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="team-card fade-in-section">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <div class="card-body text-center p-4">
+                            <div class="member-avatar mb-3">
+                                <img src="../tegra-website/assets/images/miracle-profile.webp" 
+                                     alt="Nyirihirwe Yves" class="rounded-circle">
+                                <div class="avatar-overlay">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                            </div>
+                            <h4 class="card-title fw-bold text-primary mb-2">Nyirihirwe Yves</h4>
+                            <p class="text-secondary mb-3"><i class="fas fa-users text-info"></i> Core Member</p>
+                            
+                            <div class="member-info">
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-graduation-cap text-primary"></i>
+                                    <span class="ms-2">BSc Information Technology</span>
+                                </div>
+                                <div class="info-item mb-2">
+                                    <i class="fas fa-heart text-danger"></i>
+                                    <span class="ms-2">Tech, QA</span>
+                                </div>
+                                <div class="info-item mb-3">
+                                    <i class="fas fa-tools text-success"></i>
+                                    <span class="ms-2">Technical Lead, Quality Assurance</span>
+                                </div>
+                            </div>
+                            
+                            <div class="member-badges">
+                                <span class="badge bg-primary me-1">Tech Lead</span>
+                                <span class="badge bg-warning me-1">QA</span>
+                                <span class="badge bg-secondary">Core</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+
     <style>
+    .team-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .team-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .member-avatar {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .member-avatar img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border: 4px solid var(--secondary-color);
+        transition: all 0.3s ease;
+    }
+    
+    .member-avatar:hover img {
+        border-color: var(--primary-color);
+        transform: scale(1.05);
+    }
+    
+    .avatar-overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: var(--primary-color);
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        border: 3px solid white;
+    }
+    
+    .info-item {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    
+    .info-item i {
+        width: 16px;
+    }
+    
+    .member-badges .badge {
+        font-size: 0.75rem;
+        padding: 0.5em 0.75em;
+    }
+    
     .fade-in-section {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
     }
+    
     .fade-in-section.is-visible {
         opacity: 1;
         transform: none;
     }
-    /* Increase font size for Mermaid flowchart nodes */
-    .mermaid .nodeLabel {
-        font-size: 1.25rem !important;
+    
+    .card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    
+    .card-body {
+        background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    }
+    
+    @media (max-width: 768px) {
+        .member-avatar img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .card-body {
+            padding: 1.5rem !important;
+        }
+        
+        .info-item {
+            font-size: 0.85rem;
+        }
     }
     </style>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
-        mermaid.initialize({startOnLoad:true});
         // Fade-in on scroll
         function handleFadeIn() {
             const faders = document.querySelectorAll('.fade-in-section');
@@ -110,6 +343,7 @@
                 }
             });
         }
+        
         window.addEventListener('scroll', handleFadeIn);
         window.addEventListener('DOMContentLoaded', handleFadeIn);
     </script>
