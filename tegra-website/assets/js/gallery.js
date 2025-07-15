@@ -167,21 +167,21 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// --- Main Gallery Grid: Exclude carousel images ---
-galleryGrid.innerHTML = '';
-imageList.forEach((img, i) => {
-  if (carouselImages.includes(img)) return;
-  const col = document.createElement('div');
-  col.className = 'col-6 col-sm-4 col-md-3 col-lg-2 mb-4';
-  col.innerHTML = `
-    <a href="${basePath + img}" class="glightbox" data-gallery="impact-squad" data-title="${img}">
-      <div class="gallery-img-wrap" style="animation-delay:${i * 60}ms">
-        <img src="${basePath + img}" alt="Impact Squad ${i+1}" class="img-fluid gallery-img">
-      </div>
-    </a>
-  `;
-  galleryGrid.appendChild(col);
-});
+// // --- Main Gallery Grid: Exclude carousel images ---
+// galleryGrid.innerHTML = '';
+// imageList.forEach((img, i) => {
+//   if (carouselImages.includes(img)) return;
+//   const col = document.createElement('div');
+//   col.className = 'col-6 col-sm-4 col-md-3 col-lg-2 mb-4';
+//   col.innerHTML = `
+//     <a href="${basePath + img}" class="glightbox" data-gallery="impact-squad" data-title="${img}">
+//       <div class="gallery-img-wrap" style="animation-delay:${i * 60}ms">
+//         <img src="${basePath + img}" alt="Impact Squad ${i+1}" class="img-fluid gallery-img">
+//       </div>
+//     </a>
+//   `;
+//   galleryGrid.appendChild(col);
+// });
 
 // Animate grid images on load
 window.addEventListener('DOMContentLoaded', () => {
