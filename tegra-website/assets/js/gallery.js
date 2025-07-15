@@ -266,3 +266,18 @@ if (motionContainer && motionScroll && motionImg) {
 
 // --- Motion Video Section ---
 // No custom controls needed; let the video use its default browser controls. 
+
+// --- Fade-in-on-scroll effect ---
+function fadeInOnScroll() {
+  const faders = document.querySelectorAll('.fade-in-section');
+  const observer = new window.IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  faders.forEach(el => observer.observe(el));
+}
+window.addEventListener('DOMContentLoaded', fadeInOnScroll); 
