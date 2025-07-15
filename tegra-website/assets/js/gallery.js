@@ -87,7 +87,90 @@ const imageList = [
 const galleryGrid = document.getElementById('gallery-grid');
 const basePath = '../tegra-website/assets/images/impact squad/';
 
+// Carousel images (excluded from queue/grid)
+const carouselImages = [
+  "WhatsApp Image 2025-05-26 at 15.13.25_a8e51e41.jpg",
+  "WhatsApp Image 2025-05-26 at 15.13.27_2d05831e.jpg",
+  "PXL_20250620_105141292.jpg",
+  "PXL_20250714_110251900.MP.jpg"
+];
+
+// Filter out carousel images for queue/grid
+const queueImages = imageList.filter(img => !carouselImages.includes(img));
+
+// --- Horizontal Queue Logic with Glider.js ---
+const queue = document.getElementById('horizontal-queue');
+const queueWrapper = document.getElementById('horizontal-queue-wrapper');
+const queuePrev = document.getElementById('queue-prev');
+const queueNext = document.getElementById('queue-next');
+
+// Render queue images as Glider slides
+queue.innerHTML = '';
+queueImages.forEach((img, i) => {
+  const imgDiv = document.createElement('div');
+  imgDiv.className = 'queue-img-wrap mx-2';
+  imgDiv.innerHTML = `<img src="${basePath + img}" alt="Queue ${i+1}" class="queue-img" loading="lazy">`;
+  imgDiv.onclick = () => {
+    GLightbox({
+      elements: [{ href: basePath + img, type: 'image' }],
+      openEffect: 'zoom',
+      closeEffect: 'fade',
+      width: '90vw',
+      height: '80vh',
+    }).open();
+  };
+  queue.appendChild(imgDiv);
+});
+
+// Initialize Glider.js for smooth, responsive, touch-friendly slider
+window.addEventListener('DOMContentLoaded', function() {
+  const glider = new Glider(queue, {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    draggable: true,
+    scrollLock: true,
+    dots: null,
+    arrows: {
+      prev: queuePrev,
+      next: queueNext
+    },
+    responsive: [
+      { breakpoint: 900, settings: { slidesToShow: 4 } },
+      { breakpoint: 1200, settings: { slidesToShow: 6 } }
+    ]
+  });
+
+  // Auto-scroll logic
+  let autoScroll = setInterval(() => {
+    glider.scrollItem(glider.slide + 1);
+  }, 3000);
+
+  function pauseAutoScroll() {
+    clearInterval(autoScroll);
+    autoScroll = null;
+    setTimeout(() => {
+      if (!autoScroll) {
+        autoScroll = setInterval(() => {
+          glider.scrollItem(glider.slide + 1);
+        }, 3000);
+      }
+    }, 5000);
+  }
+
+  // Pause auto-scroll on user interaction
+  [queuePrev, queueNext, queue].forEach(el => {
+    if (el) {
+      el.addEventListener('mousedown', pauseAutoScroll);
+      el.addEventListener('touchstart', pauseAutoScroll);
+      el.addEventListener('wheel', pauseAutoScroll);
+    }
+  });
+});
+
+// --- Main Gallery Grid: Exclude carousel images ---
+galleryGrid.innerHTML = '';
 imageList.forEach((img, i) => {
+  if (carouselImages.includes(img)) return;
   const col = document.createElement('div');
   col.className = 'col-6 col-sm-4 col-md-3 col-lg-2 mb-4';
   col.innerHTML = `
@@ -128,4 +211,58 @@ function addTiltEffect() {
     });
   });
 }
-addTiltEffect(); 
+addTiltEffect();
+
+// --- Parallax effect for carousel images ---
+function addCarouselParallax() {
+  const carousel = document.getElementById('impactCarousel');
+  if (!carousel) return;
+  carousel.addEventListener('mousemove', e => {
+    document.querySelectorAll('.carousel-parallax').forEach(box => {
+      const rect = box.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      box.style.transform = `translateY(${y*18}px) translateX(${x*18}px) scale(1.03)`;
+    });
+  });
+  carousel.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.carousel-parallax').forEach(box => {
+      box.style.transform = '';
+    });
+  });
+}
+addCarouselParallax();
+
+// --- Motion Image Section ---
+const motionContainer = document.querySelector('.motion-image-container');
+const motionScroll = document.querySelector('.motion-image-scroll');
+const motionImg = document.querySelector('.motion-image');
+const motionScrollbar = document.querySelector('.motion-scrollbar');
+if (motionContainer && motionScroll && motionImg) {
+  // Set up scrollable area
+  motionScroll.style.height = '320px';
+  motionScroll.style.overflowY = 'hidden';
+  motionScrollbar.style.display = 'none';
+  let isMotionHover = false;
+  motionContainer.addEventListener('mouseenter', () => {
+    motionScroll.style.overflowY = 'scroll';
+    motionScrollbar.style.display = 'block';
+    isMotionHover = true;
+  });
+  motionContainer.addEventListener('mouseleave', () => {
+    motionScroll.style.overflowY = 'hidden';
+    motionScrollbar.style.display = 'none';
+    isMotionHover = false;
+    motionScroll.scrollTop = 0;
+    motionImg.style.objectPosition = 'center top';
+  });
+  motionScroll.addEventListener('scroll', () => {
+    // Animate image position as if it's a video
+    const maxScroll = motionScroll.scrollHeight - motionScroll.clientHeight;
+    const percent = motionScroll.scrollTop / maxScroll;
+    motionImg.style.objectPosition = `center ${percent*100}%`;
+  });
+}
+
+// --- Motion Video Section ---
+// No custom controls needed; let the video use its default browser controls. 

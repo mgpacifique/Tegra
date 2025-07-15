@@ -29,7 +29,66 @@
     </nav>
     <main class="container my-5">
         <h1 class="text-center mb-5">Gallery</h1>
-        <div id="gallery-grid" class="row g-4 justify-content-center"></div>
+        <!-- Carousel Section -->
+        <div id="gallery-carousel-section" class="mb-5">
+            <div id="impactCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-parallax">
+                            <img src="../tegra-website/assets/images/impact squad/WhatsApp Image 2025-05-26 at 15.13.25_a8e51e41.jpg" class="d-block w-100 rounded shadow carousel-img" alt="...">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-parallax">
+                            <img src="../tegra-website/assets/images/impact squad/WhatsApp Image 2025-05-26 at 15.13.27_2d05831e.jpg" class="d-block w-100 rounded shadow carousel-img" alt="...">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-parallax">
+                            <img src="../tegra-website/assets/images/impact squad/PXL_20250620_105141292.jpg" class="d-block w-100 rounded shadow carousel-img" alt="...">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-parallax">
+                            <img src="../tegra-website/assets/images/impact squad/PXL_20250714_110251900.MP.jpg" class="d-block w-100 rounded shadow carousel-img" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#impactCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#impactCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Think Tank Description Placeholder -->
+        <div class="think-tank-desc text-center my-5">
+            <h2 class="mb-3">About Our Think Tank</h2>
+            <p class="lead placeholder-glow">[Description coming soon: A few words that describe our think tank, vision, and impact.]</p>
+        </div>
+        <!-- Horizontal Queue Section -->
+        <div id="gallery-horizontal-queue-section" class="my-5">
+            <h3 class="mb-4 text-center">Explore More Moments</h3>
+            <div id="horizontal-queue-wrapper">
+                <div id="horizontal-queue" class="d-flex align-items-center"></div>
+                <button id="queue-prev" class="queue-nav-btn left" aria-label="Previous"><span>&#8592;</span></button>
+                <button id="queue-next" class="queue-nav-btn right" aria-label="Next"><span>&#8594;</span></button>
+            </div>
+        </div>
+        <!-- Motion Video Section -->
+        <div id="motion-video-section" class="my-5">
+            <h3 class="mb-4 text-center">Motion Moment</h3>
+            <div class="motion-video-container">
+                <video id="motion-video" class="motion-video" src="../tegra-website/assets/images/impact%20squad/Impact%20Squad%20%E2%80%94%20Reimagining%20Africa%E2%80%99s%20Future%20%20Official%20Pitch%20Video%20-%20Impact%20Squad%20(1080p,%20h264).mp4" preload="metadata" playsinline loop muted controls autoplay></video>
+            </div>
+            <div class="motion-video-caption text-center mt-2">Play and unmute to experience our official pitch video.</div>
+        </div>
+        <!-- Glider.js for smooth queue slider -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
     </main>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
