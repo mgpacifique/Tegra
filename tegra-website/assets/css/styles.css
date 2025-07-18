@@ -3,6 +3,7 @@
     --secondary-color: #b9845f;
     --secondary-color-h: 24, 41%, 55%; /* HSL values for #b9845f */
     --accent-color: #ddb8a2;
+    --secondary-light: #f7ede6;
 }
 
 body {
@@ -82,7 +83,7 @@ body {
 }
 
 h1, h2, h3 {
-    color: var(--primary-color);
+    color: var(--secondary-color) !important;
 }
 
 /* Hero Text Styling */
@@ -484,4 +485,8 @@ h1, h2, h3 {
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
+}
+
+.bg-secondary-light {
+    background-color: var(--secondary-light) !important;
 }

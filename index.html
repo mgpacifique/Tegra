@@ -22,7 +22,7 @@
     <meta name="twitter:image" content="tegra-website/assets/images/Impact-squad-logo.png">
     <link rel="icon" type="image/png" href="tegra-website/assets/images/impact squad favicon.png">
 </head>
-<body>
+<body class="bg-secondary-light">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #251e1d;">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -45,15 +45,18 @@
 
     <header class="hero py-5" style="background: linear-gradient(rgba(37, 30, 29, 0.85), rgba(185, 132, 95, 0.85)), url('tegra-website/assets/images/group-photo.jpg'); background-size: cover; background-position: center; min-height: 70vh;">
         <div class="container text-center">
-            <h1 class="hero-title">EMPOWERING RWANDA'S TECH FUTURE</h1>
-            <p class="hero-subtext">
-                <span class="stat-highlight">62%</span> of Rwandan tech students need career guidance<br>
-                Only <span class="stat-highlight">12.8%</span> computer literacy nationwide
-            </p>
+            <h1 class="hero-title">EMPOWERING RWANDA'S FUTURE IN STEM & THE ECONOMY</h1>
+            <p class="hero-subtext">Bold ideas. Local action. Youth impact.</p>
         </div>
     </header>
 
-    <main class="container my-5 fade-in-section">
+    <main class="container my-5">
+        <section class="about-us-section mb-5">
+            <h2 class="text-center" style="color: var(--secondary-color); font-weight: 700;">About Us</h2>
+            <p class="lead">We are a youth-led think tank reimagining education, career guidance, and digital inclusion across Africa—starting with Rwanda.<br><br>
+            Our mission is to generate ideas, build tools, and influence policies that help students unlock their potential, choose the right paths, and thrive in a rapidly changing world.<br><br>
+            We work at the intersection of research, design, and action—bridging the gap between data, community needs, and bold solutions like Tegra.</p>
+        </section>
         <div class="row justify-content-center mb-4">
             <div class="col-md-8 text-center">
                 <div class="btn-group mb-3" role="group" aria-label="Toggle Statements">
@@ -61,10 +64,10 @@
                     <button id="showMission" class="btn btn-secondary statement-toggle" onclick="toggleStatement('mission')">Mission Statement</button>
                 </div>
                 <div id="problemStatement" class="toggle-statement fade-toggle show">
-                    <div class="alert alert-info"><strong>Problem Statement:</strong> In Rwanda today, many highschool students want to be data scientist, software engineers or web developers, but many times they don't understand where to start, who to talk to for guidance as these fields are wide and big. A 2022 survey by the Rwanda Education Board showed that 62% of students interested in tech couldn’t name a clear career goal, and only 18% had someone in the tech field to guide them. Even though there are amazing learning opportunities online through platforms like Coursera, Udemy or programs like ALX, fewer than 25% of students knew how to find or use them. Without the right guidance and support, many young people risk wasting time, losing motivation, or giving up on a field they could truly thrive in.</div>
+                    <div class="alert alert-info"><strong>Problem Statement:</strong> In Rwanda, secondary students—particularly those in upper secondary—are expected to select academic combinations that shape their future. However, many do so without adequate support, mentorship, or exposure to real-world career possibilities.<br><br>This results in missed opportunities, poor motivation, and a growing disconnect between education and national priorities like digital transformation and inclusive economic growth.</div>
                 </div>
                 <div id="missionStatement" class="toggle-statement fade-toggle">
-                    <div class="alert alert-success"><strong>Mission Statement:</strong> Our mission is to empower students in highschool who are interested in tech, by helping them choose the right path, build their skills and connect with mentors.</div>
+                    <div class="alert alert-success"><strong>Mission Statement:</strong> Our mission is to mentor Rwandan secondary school students—especially in upper secondary—by providing personalized career guidance across fields like technology, science, and economics, while reigniting a love for learning through engaging, accessible, and fun experiences.</div>
                 </div>
             </div>
         </div>
@@ -72,45 +75,50 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h3 class="mt-5 text-center">Key Statistics</h3>
-                    <div class="row mt-4 g-3">
-                        <div class="col-6 col-lg-4 text-center fade-in-section">
-                            <div class="stat-card">
-                                <canvas id="computerLiteracyChart" width="90" height="90" aria-label="Youth Computer Literacy"></canvas>
-                                <div class="stat-label">Youth Computer Literacy<br><span class="stat-highlight">18.8%</span> are computer literate</div>
-                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                    <div class="row mt-4 g-3 justify-content-center">
+                        <div class="col-12 col-md-6 mb-4">
+                            <div class="stat-card p-4 h-100 text-center">
+                                <h4 class="mb-3" style="color: var(--secondary-color);"><i class="fas fa-laptop-code me-2"></i>ICT Access & Digital Literacy</h4>
+                                <canvas id="ictDonut" width="240" height="240" aria-label="ICT Access & Digital Literacy"></canvas>
+                                <ul class="list-unstyled mt-3 mb-0">
+                                    <li><span class="stat-highlight">18.5%</span> of youth are computer literate</li>
+                                    <li>Only <span class="stat-highlight">2.5%</span> of youth use computers for learning purposes</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-6 col-lg-4 text-center fade-in-section">
-                            <div class="stat-card">
-                                <canvas id="internetUseChart" width="90" height="90" aria-label="Youth Internet Use"></canvas>
-                                <div class="stat-label">Youth Internet Use<br><span class="stat-highlight">43.4%</span> used the internet</div>
-                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        <div class="col-12 col-md-6 mb-4">
+                            <div class="stat-card p-4 h-100 text-center">
+                                <h4 class="mb-3" style="color: var(--secondary-color);"><i class="fas fa-globe me-2"></i>Internet Use Among Youth</h4>
+                                <canvas id="internetDonut" width="240" height="240" aria-label="Internet Use Among Youth"></canvas>
+                                <ul class="list-unstyled mt-3 mb-0">
+                                    <li>Only <span class="stat-highlight">26.7%</span> of youth have ever used the internet</li>
+                                    <li>Only <span class="stat-highlight">6.7%</span> of youth use the internet for study purposes</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-6 col-lg-4 text-center fade-in-section">
-                            <div class="stat-card">
-                                <canvas id="mobileOwnershipChart" width="90" height="90" aria-label="Mobile Phone Ownership"></canvas>
-                                <div class="stat-label">Mobile Phone Ownership<br><span class="stat-highlight">72.5%</span> own a mobile phone</div>
-                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        <div class="col-12 col-md-6 mb-4">
+                            <div class="stat-card p-4 h-100 text-center">
+                                <h4 class="mb-3" style="color: var(--secondary-color);"><i class="fas fa-book-open me-2"></i>Subject Combinations (Upper Secondary)</h4>
+                                <canvas id="subjectBar" width="240" height="240" aria-label="Subject Combinations"></canvas>
+                                <ul class="list-unstyled mt-3 mb-0">
+                                    <li>MCB (Maths, Chemistry, Biology) and HEG (History, Economics, Geography) are the most common combinations</li>
+                                    <li>Students are required to choose subject combinations in S4, but many report not understanding career pathways linked to them</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-6 col-lg-4 text-center fade-in-section">
-                            <div class="stat-card">
-                                <canvas id="populationLiteracyChart" width="90" height="90" aria-label="Computer Literacy (15+)"></canvas>
-                                <div class="stat-label">Computer Literacy (15+)<br><span class="stat-highlight">12.8%</span> are computer literate</div>
-                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
+                        <div class="col-12 col-md-6 mb-4">
+                            <div class="stat-card p-4 h-100 text-center">
+                                <h4 class="mb-3" style="color: var(--secondary-color);"><i class="fas fa-brick me-2"></i>Barriers to Learning or Skill Development</h4>
+                                <canvas id="barriersDonut" width="240" height="240" aria-label="Barriers to Learning"></canvas>
+                                <ul class="list-unstyled mt-3 mb-0">
+                                    <li>Top reasons for school dropout among youth:</li>
+                                    <li class="ms-3">Lack of money (<span class="stat-highlight">49%</span>)</li>
+                                    <li class="ms-3">Lack of interest (<span class="stat-highlight">18%</span>)</li>
+                                    <li class="ms-3">Long distance to school (<span class="stat-highlight">10%</span>)</li>
+                                    <li>Only <span class="stat-highlight">12.2%</span> of youth aged 16–30 participated in any form of technical or vocational education (TVET)</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-6 col-lg-4 text-center fade-in-section">
-                            <div class="stat-card">
-                                <canvas id="populationInternetChart" width="90" height="90" aria-label="Internet Use (6+)"></canvas>
-                                <div class="stat-label">Internet Use (6+)<br><span class="stat-highlight">27.4%</span> used the internet</div>
-                                <div class="stat-source">Source: NISR EICV 2022/2023</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12 text-end stat-source">Additional data: Rwanda Education Board 2022</div>
                     </div>
                 </div>
             </div>
@@ -121,9 +129,9 @@
             <div class="footer-brand">
                 <img src="tegra-website/assets/images/Impact-squad-logo.png" alt="Impact Squad Logo">
                 <div class="footer-contact">
-                    <div class="footer-contact-item"><span class="footer-icon"><i class="fab fa-instagram"></i></span><a href="https://instagram.com/your_instagram" target="_blank">@your_instagram</a></div>
-                    <div class="footer-contact-item"><span class="footer-icon"><i class="fas fa-envelope"></i></span><a href="mailto:your@email.com">your@email.com</a></div>
-                    <div class="footer-contact-item"><span class="footer-icon"><i class="fas fa-map-marker-alt"></i></span><span>123 Main St, Kigali, Rwanda</span></div>
+                    <div class="footer-contact-item"><span class="footer-icon"><i class="fab fa-instagram"></i></span><a href="https://www.instagram.com/impactsquad.tt/" target="_blank">@impactsquad.tt</a></div>
+                    <div class="footer-contact-item"><span class="footer-icon"><i class="fas fa-envelope"></i></span><a href="mailto:impactsquad@gmail.com">impactsquad@gmail.com</a></div>
+                    <div class="footer-contact-item"><span class="footer-icon"><i class="fas fa-map-marker-alt"></i></span><span>Bumbogo, Kigali, Rwanda</span></div>
                 </div>
             </div>
             <div class="footer-links">
@@ -195,8 +203,12 @@
     }
     
     .stat-card canvas {
-        max-width: 100%;
-        height: auto;
+        max-width: 240px;
+        max-height: 240px;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 auto;
+        display: block;
     }
     
     @media (max-width: 768px) {
@@ -276,62 +288,51 @@
             secondary: getComputedStyle(document.documentElement).getPropertyValue('--secondary-color').trim() || '#b9845f',
             accent: getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim() || '#ddb8a2',
         };
-        // Youth Computer Literacy
-        new Chart(document.getElementById('computerLiteracyChart'), {
+        // Donut Chart: ICT Access & Digital Literacy
+        new Chart(document.getElementById('ictDonut'), {
             type: 'doughnut',
             data: {
-                labels: ['Literate', 'Not Literate'],
+                labels: ['Computer Literate', 'Not Literate'],
                 datasets: [{
-                    data: [18.8, 81.2],
+                    data: [18.5, 81.5],
                     backgroundColor: [palette.secondary, '#eaeaea'],
                 }]
             },
             options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
         });
-        // Youth Internet Use
-        new Chart(document.getElementById('internetUseChart'), {
+        // Donut Chart: Internet Use Among Youth
+        new Chart(document.getElementById('internetDonut'), {
             type: 'doughnut',
             data: {
-                labels: ['Used Internet', 'Not Used'],
+                labels: ['Used Internet', 'Never Used'],
                 datasets: [{
-                    data: [43.4, 56.6],
+                    data: [26.7, 73.3],
                     backgroundColor: [palette.primary, '#eaeaea'],
                 }]
             },
             options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
         });
-        // Mobile Phone Ownership (16+)
-        new Chart(document.getElementById('mobileOwnershipChart'), {
-            type: 'doughnut',
+        // Bar Chart: Subject Combinations
+        new Chart(document.getElementById('subjectBar'), {
+            type: 'bar',
             data: {
-                labels: ['Own Phone', 'No Phone'],
+                labels: ['MCB', 'HEG', 'Other'],
                 datasets: [{
-                    data: [72.5, 27.5],
-                    backgroundColor: [palette.accent, '#eaeaea'],
+                    label: 'Percentage of Students',
+                    data: [38, 34, 28],
+                    backgroundColor: [palette.secondary, palette.primary, palette.accent],
                 }]
             },
-            options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
+            options: {scales: {y: {beginAtZero: true, max: 100}}, plugins: {legend: {display: false}}}
         });
-        // Computer Literacy (15+)
-        new Chart(document.getElementById('populationLiteracyChart'), {
+        // Donut Chart: Barriers to Learning
+        new Chart(document.getElementById('barriersDonut'), {
             type: 'doughnut',
             data: {
-                labels: ['Literate', 'Not Literate'],
+                labels: ['Lack of Money', 'Lack of Interest', 'Long Distance', 'Other'],
                 datasets: [{
-                    data: [12.8, 87.2],
-                    backgroundColor: [palette.secondary, '#eaeaea'],
-                }]
-            },
-            options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
-        });
-        // Internet Use (6+)
-        new Chart(document.getElementById('populationInternetChart'), {
-            type: 'doughnut',
-            data: {
-                labels: ['Used Internet', 'Not Used'],
-                datasets: [{
-                    data: [27.4, 72.6],
-                    backgroundColor: [palette.primary, '#eaeaea'],
+                    data: [49, 18, 10, 23],
+                    backgroundColor: [palette.secondary, palette.primary, palette.accent, '#eaeaea'],
                 }]
             },
             options: {animation: {animateRotate: true, duration: 1500, easing: 'easeInOutQuart'}, cutout: '70%', plugins: {legend: {display: true, position: 'bottom'}}}
