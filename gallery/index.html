@@ -50,7 +50,6 @@
         <video id="motion-video-bg" class="motion-video-bg" 
             data-src="../tegra-website/assets/images/impact squad/impact-squad-pitch-480p.mp4"
             preload="none" playsinline loop muted autoplay
-            poster="../tegra-website/assets/images/Impact-squad-logo.png"
             style="width:100vw; height:60vh; object-fit:cover; position:absolute; left:0; top:0; z-index:1;">
         </video>
         <div class="motion-bg-overlay position-absolute w-100 h-100" style="background:rgba(37,30,29,0.45); left:0; top:0; z-index:2;"></div>
@@ -60,29 +59,14 @@
         </div>
     </section>
     <script>
-    function isMobileOrSlow() {
-      // Basic mobile check
-      if (/Mobi|Android/i.test(navigator.userAgent)) return true;
-      // Network check (if supported)
-      if ('connection' in navigator) {
-        const conn = navigator.connection;
-        if (conn.saveData || (conn.effectiveType && /2g|3g/.test(conn.effectiveType))) return true;
-      }
-      return false;
-    }
-
+    // Lazy load the background video after the page is interactive
     window.addEventListener('DOMContentLoaded', function() {
-      var vid = document.getElementById('motion-video-bg');
-      if (isMobileOrSlow()) {
-        // Don't load video, just show poster
-        if (vid) vid.parentNode.removeChild(vid);
-      } else {
-        setTimeout(function() {
-          if (vid && vid.dataset.src) {
-            vid.src = vid.dataset.src;
-          }
-        }, 800);
-      }
+      setTimeout(function() {
+        var vid = document.getElementById('motion-video-bg');
+        if (vid && vid.dataset.src) {
+          vid.src = vid.dataset.src;
+        }
+      }, 800); // Delay in ms (adjust as needed)
     });
     </script>
     <main class="container my-5">
