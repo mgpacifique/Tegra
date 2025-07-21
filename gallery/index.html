@@ -43,13 +43,48 @@
     </nav>
     <!-- Motion Video Overlay Background -->
     <section class="motion-bg-section position-relative" style="z-index:1;">
-        <video id="motion-video-bg" class="motion-video-bg" src="../tegra-website/assets/images/impact%20squad/Impact%20Squad%20%E2%80%94%20Reimagining%20Africa%E2%80%99s%20Future%20%20Official%20Pitch%20Video%20-%20Impact%20Squad%20(1080p,%20h264).mp4" preload="metadata" playsinline loop muted autoplay style="width:100vw; height:60vh; object-fit:cover; position:absolute; left:0; top:0; z-index:1;"></video>
+        <!--
+          TODO: For best performance, replace the video source below with a lower-resolution, compressed version (e.g., 480p or 360p, lower bitrate).
+          Example: Impact Squad — Reimagining Africa’s Future  Official Pitch Video - Impact Squad (480p, h264).mp4
+        -->
+        <video id="motion-video-bg" class="motion-video-bg" 
+            data-src="../tegra-website/assets/images/impact squad/impact-squad-pitch-480p.mp4"
+            preload="none" playsinline loop muted autoplay
+            poster="../tegra-website/assets/images/Impact-squad-logo.png"
+            style="width:100vw; height:60vh; object-fit:cover; position:absolute; left:0; top:0; z-index:1;">
+        </video>
         <div class="motion-bg-overlay position-absolute w-100 h-100" style="background:rgba(37,30,29,0.45); left:0; top:0; z-index:2;"></div>
         <div class="motion-bg-caption position-relative text-center text-white d-flex flex-column justify-content-center align-items-center" style="height:60vh; z-index:3;">
             <h2 class="display-5 fw-bold mb-3" style="text-shadow:2px 2px 8px #000;">Impact Squad in Action</h2>
             <div class="lead" style="text-shadow:1px 1px 6px #000;">Explore the faces, places, and moments behind our work.<br>From classrooms to community—this is what change looks like.<br>Real stories. Real students. Real progress.</div>
         </div>
     </section>
+    <script>
+    function isMobileOrSlow() {
+      // Basic mobile check
+      if (/Mobi|Android/i.test(navigator.userAgent)) return true;
+      // Network check (if supported)
+      if ('connection' in navigator) {
+        const conn = navigator.connection;
+        if (conn.saveData || (conn.effectiveType && /2g|3g/.test(conn.effectiveType))) return true;
+      }
+      return false;
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      var vid = document.getElementById('motion-video-bg');
+      if (isMobileOrSlow()) {
+        // Don't load video, just show poster
+        if (vid) vid.parentNode.removeChild(vid);
+      } else {
+        setTimeout(function() {
+          if (vid && vid.dataset.src) {
+            vid.src = vid.dataset.src;
+          }
+        }, 800);
+      }
+    });
+    </script>
     <main class="container my-5">
         <h1 class="text-center mb-5">Gallery</h1>
         <!-- Carousel Section -->
